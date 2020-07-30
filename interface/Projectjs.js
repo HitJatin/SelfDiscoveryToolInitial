@@ -25,7 +25,7 @@ $(document).ready(function(){
             else
             next++;
         }
-        $("#quality").text(file_source[next].Quality)
+        $("#quality").text(file_source[next].Property)
         $("#Quality_desc").text(file_source[next].Meaning)
         current=next;
         if(next==(file_source.length-1))
@@ -54,13 +54,13 @@ $(document).ready(function(){
                 else
                 next++;
             }    
-            $("#quality").text(file_source[next].Quality)
+            $("#quality").text(file_source[next].Property)
             $("#Quality_desc").text(file_source[next].Meaning)
             if(next==(file_source.length-1))
             {
                 if(current!=next)
                 {
-                    $("#Second_Row").append("<button type='button' class='Qual' id='qual_"+current+"' onclick='labelfunc("+current+")'>"+file_source[current].Quality+"</button>")
+                    $("#Second_Row").append("<button type='button' class='Qual' id='qual_"+current+"' onclick='labelfunc("+current+")'>"+file_source[current].Property+"</button>")
                     file_source[current][2]='1';
                     count++;
                     document.getElementById("Selection_count").textContent=count+fcount();
@@ -69,7 +69,7 @@ $(document).ready(function(){
             }   
             else
             {
-                $("#Second_Row").append("<button type='button' class='Qual' id='qual_"+current+"' onclick='labelfunc("+current+")'>"+file_source[current].Quality+"</button>")
+                $("#Second_Row").append("<button type='button' class='Qual' id='qual_"+current+"' onclick='labelfunc("+current+")'>"+file_source[current].Property+"</button>")
                 file_source[current].Status='1';
                 current=next;
                 next++;
@@ -101,7 +101,7 @@ $(document).ready(function(){
         }
         else
         {
-            $("#quality").text(file_source[next].Quality)
+            $("#quality").text(file_source[next].Property)
             $("#Quality_desc").text(file_source[next].Meaning)
             current=next;
             next=current+1;
@@ -145,7 +145,7 @@ $(document).ready(function(){
                         break;
                     }
                 }
-                $("#quality").text(file_source[next].Quality)
+                $("#quality").text(file_source[next].Property)
                 $("#Quality_desc").text(file_source[next].Meaning)
                 current=next;
                 next++;
@@ -173,7 +173,7 @@ $(document).ready(function(){
                         break;
                     }
                 }
-                $("#quality").text(file_source[next].Quality)
+                $("#quality").text(file_source[next].Property)
                 $("#Quality_desc").text(file_source[next].Meaning)
                 current=next;
                 next++;
@@ -204,7 +204,7 @@ $(document).ready(function(){
                         break;
                     }
                 }
-                $("#quality").text(file_source[next].Quality)
+                $("#quality").text(file_source[next].Property)
                 $("#Quality_desc").text(file_source[next].Meaning)
                 current=next;
                 next++;
@@ -236,7 +236,7 @@ $(document).ready(function(){
                 {
                     if(file_source[i].Level=='4')
                     {
-                        $("#sortable_quality").append('<li id="'+i+'">'+file_source[i].Quality+'</li>');
+                        $("#sortable_quality").append('<li id="'+i+'">'+file_source[i].Property+'</li>');
                     }
                 }
             }
@@ -257,7 +257,7 @@ $(document).ready(function(){
             n.style.display = "none";
             var idsInOrder = $("#sortable_quality").sortable("toArray");
             for(i=0;i<6;i++)
-            $("#addquality").append('<tr><th>'+file_source[idsInOrder[i]].Quality+'</th><th>'+file_source[idsInOrder[i]].Meaning+'</th></tr>');
+            $("#addquality").append('<tr><th>'+file_source[idsInOrder[i]].Property+'</th><th>'+file_source[idsInOrder[i]].Meaning+'</th></tr>');
         }
     });
 });
